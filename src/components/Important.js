@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { TfiLightBulb } from "react-icons/tfi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosMore } from "react-icons/io";
+import { IoIosStarOutline } from "react-icons/io";
 
 import { useContext } from "react";
 import { SettingsContext } from "./SettingsContext";
@@ -18,6 +19,7 @@ const MyDay = () => {
       )}
       <TopSection>
         <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
+          <IoIosStarOutline fontSize={30} color="white" />
           <h1 style={{ color: "white", fontWeight: "bold", fontSize: "33px" }}>
             Important
           </h1>

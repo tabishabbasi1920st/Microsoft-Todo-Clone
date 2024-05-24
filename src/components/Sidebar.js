@@ -8,48 +8,51 @@ import { SettingsContext } from "./SettingsContext";
 
 // sidebar navigation item images.
 import { IoSunnyOutline } from "react-icons/io5";
-import { CiStar } from "react-icons/ci";
+import { IoIosStarOutline } from "react-icons/io";
 import { IoBarcodeSharp } from "react-icons/io5";
 import { GoInfinity } from "react-icons/go";
-import { CiCircleCheck } from "react-icons/ci";
-import { FaRegUser } from "react-icons/fa";
+import { GoCheckCircle } from "react-icons/go";
+
+import { AiOutlineUser } from "react-icons/ai";
+import { CiSearch } from "react-icons/ci";
+
 import { GoHome } from "react-icons/go";
 
 const routes = [
   {
     path: "/",
     name: "My Day",
-    icon: <IoSunnyOutline />,
+    icon: <IoSunnyOutline fontSize={30} />,
   },
   {
     path: "/important",
     name: "Important",
-    icon: <CiStar />,
+    icon: <IoIosStarOutline fontSize={30} />,
   },
   {
     path: "/planned",
     name: "Planned",
-    icon: <IoBarcodeSharp />,
+    icon: <IoBarcodeSharp fontSize={30} />,
   },
   {
     path: "/all",
     name: "All",
-    icon: <GoInfinity />,
+    icon: <GoInfinity fontSize={30} />,
   },
   {
     path: "/completed",
     name: "Completed",
-    icon: <CiCircleCheck />,
+    icon: <GoCheckCircle fontSize={30} />,
   },
   {
     path: "/assigned-to-me",
     name: "Assigned to me",
-    icon: <FaRegUser />,
+    icon: <AiOutlineUser fontSize={30} />,
   },
   {
     path: "/tasks",
     name: "Tasks",
-    icon: <GoHome />,
+    icon: <GoHome fontSize={30} />,
   },
 ];
 
@@ -96,6 +99,7 @@ export default function Sidebar({ children }) {
     return (
       <SearchContainer>
         <CustomInput type="search" placeholder="Search" />
+        <CiSearch color="white" fontSize={30} />
       </SearchContainer>
     );
   };
@@ -125,7 +129,9 @@ export default function Sidebar({ children }) {
             >
               <div className="border-container"></div>
               {eachRoute.icon}
-              <span style={{ fontSize: "15px" }}>{eachRoute.name}</span>
+              <span style={{ fontSize: "16px", fontWeight: 400 }}>
+                {eachRoute.name}
+              </span>
             </CustomNavLink>
           ))}
         </Section>
