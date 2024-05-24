@@ -4,6 +4,7 @@ export const SettingsContext = createContext(null);
 
 const SettingsContextProvider = ({ children }) => {
   const [sidebar, setSidebar] = useState(false);
+  const [todoList, setTodoList] = useState([]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -17,7 +18,9 @@ const SettingsContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <SettingsContext.Provider value={{ sidebar, setSidebar }}>
+    <SettingsContext.Provider
+      value={{ sidebar, setSidebar, todoList, setTodoList }}
+    >
       {children}
     </SettingsContext.Provider>
   );

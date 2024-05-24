@@ -7,7 +7,7 @@ import { IoIosStarOutline } from "react-icons/io";
 import { useContext } from "react";
 import { SettingsContext } from "./SettingsContext";
 
-const MyDay = () => {
+const Important = () => {
   const { sidebar, setSidebar } = useContext(SettingsContext);
 
   return (
@@ -37,7 +37,7 @@ const MyDay = () => {
   );
 };
 
-export default MyDay;
+export default Important;
 
 const MainContainer = styled.div`
   background-color: #1c1c1c;

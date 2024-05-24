@@ -6,7 +6,7 @@ import { CiCircleCheck } from "react-icons/ci";
 import { useContext } from "react";
 import { SettingsContext } from "./SettingsContext";
 
-const MyDay = () => {
+const Completed = () => {
   const { sidebar, setSidebar } = useContext(SettingsContext);
 
   return (
@@ -36,7 +36,7 @@ const MyDay = () => {
   );
 };
 
-export default MyDay;
+export default Completed;
 
 const MainContainer = styled.div`
   background-color: #1c1c1c;

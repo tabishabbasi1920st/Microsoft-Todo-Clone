@@ -7,7 +7,7 @@ import { IoBarcodeSharp } from "react-icons/io5";
 import { useContext } from "react";
 import { SettingsContext } from "./SettingsContext";
 
-const MyDay = () => {
+const Planned = () => {
   const { sidebar, setSidebar } = useContext(SettingsContext);
 
   return (
@@ -37,7 +37,7 @@ const MyDay = () => {
   );
 };
 
-export default MyDay;
+export default Planned;
 
 const MainContainer = styled.div`
   background-color: #1c1c1c;

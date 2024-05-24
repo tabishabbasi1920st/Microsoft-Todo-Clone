@@ -6,6 +6,7 @@ import { IoSunnyOutline } from "react-icons/io5";
 
 import { useContext } from "react";
 import { SettingsContext } from "./SettingsContext";
+import NewTodoInput from "./NewTodoInput";
 
 const MyDay = () => {
   const { sidebar, setSidebar } = useContext(SettingsContext);
@@ -29,6 +30,7 @@ const MyDay = () => {
           <GiHamburgerMenu />
         </Button>
       )}
+
       <TopSection>
         <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
           <IoSunnyOutline color="white" fontSize={30} />
@@ -50,6 +52,8 @@ const MyDay = () => {
           </CustomButton>
         </div>
       </TopSection>
+      <TodoSection></TodoSection>
+      <NewTodoInput />
     </MainContainer>
   );
 };
@@ -64,8 +68,10 @@ const MainContainer = styled.div`
   @media screen and (min-width: 768px) {
     padding: 20px;
   }
-  background-image: url("https://res.cloudinary.com/dctfbwk0m/image/upload/v1716527660/green-field-tree-blue-skygreat-as-backgroundweb-banner-generative-ai-min_e5anfu.jpg");
+  background-image: url("https://res.cloudinary.com/dctfbwk0m/image/upload/v1716527979/dry-autumn-leaves-nature-min_dslzyb.jpg");
   background-size: cover;
+  display: flex;
+  flex-direction: column;
 `;
 
 const TopSection = styled.section`
@@ -75,7 +81,7 @@ const TopSection = styled.section`
 `;
 
 const CustomButton = styled.button`
-  background-color: #232323;
+  background-color: rgba(41, 41, 41, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,4 +104,9 @@ const Button = styled.button`
   align-items: center;
   cursor: pointer;
   margin-bottom: 20px;
+  align-self: flex-start;
+`;
+
+const TodoSection = styled.section`
+  flex-grow: 1;
 `;

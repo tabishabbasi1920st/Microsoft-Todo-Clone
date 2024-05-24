@@ -6,7 +6,7 @@ import { GoHome } from "react-icons/go";
 import { useContext } from "react";
 import { SettingsContext } from "./SettingsContext";
 
-const MyDay = () => {
+const Tasks = () => {
   const { sidebar, setSidebar } = useContext(SettingsContext);
 
   return (
@@ -36,7 +36,7 @@ const MyDay = () => {
   );
 };
 
-export default MyDay;
+export default Tasks;
 
 const MainContainer = styled.div`
   background-color: #1c1c1c;

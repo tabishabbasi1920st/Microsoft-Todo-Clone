@@ -146,11 +146,10 @@ const MainContainer = styled.div`
   width: 100%;
   background-color: #232323;
   display: flex;
-  z-index: 5000;
 `;
 
 const SidebarContainer = styled.div`
-  background-color: #232323;
+  background-color: rgba(41, 41, 41, 0.97);
   height: 100vh;
   overflow-y: auto;
 

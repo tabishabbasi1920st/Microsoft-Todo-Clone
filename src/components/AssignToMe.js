@@ -6,7 +6,7 @@ import { AiOutlineUser } from "react-icons/ai";
 import { useContext } from "react";
 import { SettingsContext } from "./SettingsContext";
 
-const MyDay = () => {
+const AssignToMe = () => {
   const { sidebar, setSidebar } = useContext(SettingsContext);
 
   return (
@@ -36,7 +36,7 @@ const MyDay = () => {
   );
 };
 
-export default MyDay;
+export default AssignToMe;
 
 const MainContainer = styled.div`
   background-color: #1c1c1c;

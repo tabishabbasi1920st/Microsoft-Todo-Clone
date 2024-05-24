@@ -6,7 +6,7 @@ import { GoInfinity } from "react-icons/go";
 import { useContext } from "react";
 import { SettingsContext } from "./SettingsContext";
 
-const MyDay = () => {
+const All = () => {
   const { sidebar, setSidebar } = useContext(SettingsContext);
 
   return (
@@ -36,7 +36,7 @@ const MyDay = () => {
   );
 };
 
-export default MyDay;
+export default All;
 
 const MainContainer = styled.div`
   background-color: #1c1c1c;
