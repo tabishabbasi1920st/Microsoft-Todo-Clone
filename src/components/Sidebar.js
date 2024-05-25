@@ -1,11 +1,15 @@
 import styled from "styled-components";
 import SidebarPanel from "./SidebarPanel";
+import ListOptionsSidebar from "./ListOptionsSidebar";
+import SuggestionSidebar from "./SuggestionSidebar";
 
 export default function Sidebar({ children }) {
   return (
     <MainContainer>
       <SidebarPanel />
       <Main>{children}</Main>
+      <ListOptionsSidebar />
+      <SuggestionSidebar />
     </MainContainer>
   );
 }

@@ -9,7 +9,8 @@ import NewTodoInput from "./NewTodoInput";
 import TodoItem from "./TodoItem";
 
 const MyDay = () => {
-  const { sidebar, setSidebar, todoList } = useContext(SettingsContext);
+  const { setSidebar, todoList, setListOptionsSidebar, setSuggestionsSidebar } =
+    useContext(SettingsContext);
 
   const getFormattedDate = (date) => {
     const options = { weekday: "long", day: "2-digit", month: "short" };
@@ -42,10 +43,14 @@ const MyDay = () => {
           </div>
         </div>
         <div style={{ display: "flex", gap: 10 }}>
-          <CustomButton>
+          <CustomButton
+            onClick={() => setSuggestionsSidebar((prevState) => !prevState)}
+          >
             <TfiLightBulb />
           </CustomButton>
-          <CustomButton>
+          <CustomButton
+            onClick={() => setListOptionsSidebar((prevState) => !prevState)}
+          >
             <IoIosMore />
           </CustomButton>
         </div>
@@ -122,6 +127,7 @@ const TodoContainer = styled.ul`
   gap: 10px;
   overflow: auto;
   padding-bottom: 10px;
+  margin-bottom: 10px;
 
   &::-webkit-scrollbar {
     display: none;
