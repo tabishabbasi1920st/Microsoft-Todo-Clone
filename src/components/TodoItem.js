@@ -70,6 +70,7 @@ const MainContainer = styled.li`
   align-items: center;
   gap: 10px;
   justify-content: space-between;
+  padding-left: 5px;
 `;
 
 const Button = styled.button`

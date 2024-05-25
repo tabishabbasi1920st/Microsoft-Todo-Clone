@@ -3,7 +3,6 @@ import { TfiLightBulb } from "react-icons/tfi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosMore } from "react-icons/io";
 import { IoSunnyOutline } from "react-icons/io5";
-
 import { useContext } from "react";
 import { SettingsContext } from "./SettingsContext";
 import NewTodoInput from "./NewTodoInput";
@@ -26,11 +25,9 @@ const MyDay = () => {
 
   return (
     <MainContainer>
-      {!sidebar && (
-        <Button onClick={() => setSidebar(true)}>
-          <GiHamburgerMenu />
-        </Button>
-      )}
+      <Button onClick={() => setSidebar(true)}>
+        <GiHamburgerMenu />
+      </Button>
 
       <TopSection>
         <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
@@ -69,7 +66,7 @@ const MainContainer = styled.div`
   background-color: #1c1c1c;
   height: 100%;
   width: 100%;
-  padding: 10px;
+  padding: 10px 10px 10px 10px;
   @media screen and (min-width: 768px) {
     padding: 20px;
   }
@@ -110,6 +107,10 @@ const Button = styled.button`
   cursor: pointer;
   margin-bottom: 20px;
   align-self: flex-start;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const TodoContainer = styled.ul`

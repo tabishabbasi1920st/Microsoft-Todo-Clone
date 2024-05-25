@@ -4,6 +4,7 @@ export const SettingsContext = createContext(null);
 
 const SettingsContextProvider = ({ children }) => {
   const [sidebar, setSidebar] = useState(false);
+  const [listOptionsSidebar, setListOptionsSidebar] = useState(false);
   const [todoList, setTodoList] = useState([]);
 
   useEffect(() => {
@@ -71,6 +72,8 @@ const SettingsContextProvider = ({ children }) => {
         unmarkTodoAsImportant,
         markTodoAsCompleted,
         unMarkTodoAsCompleted,
+        listOptionsSidebar,
+        setListOptionsSidebar,
       }}
     >
       {children}

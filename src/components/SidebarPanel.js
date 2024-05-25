@@ -156,8 +156,8 @@ const SidebarContainer = styled.div`
   @media screen and (max-width: 768px) {
     width: ${(props) => (props.isOpen ? "100%" : "0px")};
     position: absolute;
+    transition: width 0.2s ease-in-out;
   }
-  transition: width 0.2s ease-in-out;
 `;
 
 const MainSection = styled.section`

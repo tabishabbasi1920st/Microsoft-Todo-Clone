@@ -19,7 +19,5 @@ const MainContainer = styled.div`
 
 const Main = styled.main`
   flex-grow: 1;
-  border-top-left-radius: ${(props) => (props.isOpen ? "10px" : "0px")};
-  border-bottom-left-radius: ${(props) => (props.isOpen ? "10px" : "0px")};
   height: 100vh;
 `;

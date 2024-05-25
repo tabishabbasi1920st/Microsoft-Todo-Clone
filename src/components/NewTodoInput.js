@@ -93,7 +93,7 @@ const MainContainer = styled.div`
   margin-bottom: 10px;
   background: rgba(41, 41, 41, 0.4);
   align-items: center;
-  padding-left: 5px;
+  padding-left: 10px;
 `;
 
 const CustomInput = styled.input`
