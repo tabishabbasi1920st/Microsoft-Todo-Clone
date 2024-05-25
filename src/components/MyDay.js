@@ -7,9 +7,10 @@ import { IoSunnyOutline } from "react-icons/io5";
 import { useContext } from "react";
 import { SettingsContext } from "./SettingsContext";
 import NewTodoInput from "./NewTodoInput";
+import TodoItem from "./TodoItem";
 
 const MyDay = () => {
-  const { sidebar, setSidebar } = useContext(SettingsContext);
+  const { sidebar, setSidebar, todoList } = useContext(SettingsContext);
 
   const getFormattedDate = (date) => {
     const options = { weekday: "long", day: "2-digit", month: "short" };
@@ -52,7 +53,11 @@ const MyDay = () => {
           </CustomButton>
         </div>
       </TopSection>
-      <TodoSection></TodoSection>
+      <TodoContainer>
+        {todoList.map((eachTodo) => (
+          <TodoItem todo={eachTodo} key={eachTodo.id} />
+        ))}
+      </TodoContainer>
       <NewTodoInput />
     </MainContainer>
   );
@@ -107,6 +112,17 @@ const Button = styled.button`
   align-self: flex-start;
 `;
 
-const TodoSection = styled.section`
+const TodoContainer = styled.ul`
   flex-grow: 1;
+  margin-top: 20px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: auto;
+  padding-bottom: 10px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;

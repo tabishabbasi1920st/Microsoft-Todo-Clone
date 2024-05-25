@@ -52,9 +52,12 @@ const NewTodoInput = () => {
       id: uuidv4(),
       text: inputValue,
       createdAt: new Date(),
+      important: false,
+      completed: false,
     };
 
     setTodoList((prevState) => [...prevState, newTodo]);
+    setInputValue("");
   };
 
   console.log(todoList);
@@ -83,14 +86,14 @@ const NewTodoInput = () => {
 export default NewTodoInput;
 
 const MainContainer = styled.div`
-  height: 50px;
+  min-height: 50px;
   display: flex;
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 10px;
   background: rgba(41, 41, 41, 0.4);
   align-items: center;
-  padding-left: 10px;
+  padding-left: 5px;
 `;
 
 const CustomInput = styled.input`

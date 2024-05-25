@@ -17,9 +17,61 @@ const SettingsContextProvider = ({ children }) => {
     handleResize();
   }, []);
 
+  const markTodoAsImportant = (todoId) => {
+    const updatedTodoList = todoList.map((todo) => {
+      if (todo.id === todoId) {
+        return { ...todo, important: true };
+      }
+      return todo;
+    });
+
+    setTodoList(updatedTodoList);
+  };
+
+  const unmarkTodoAsImportant = (todoId) => {
+    const updatedTodoList = todoList.map((todo) => {
+      if (todo.id === todoId) {
+        return { ...todo, important: false };
+      }
+      return todo;
+    });
+
+    setTodoList(updatedTodoList);
+  };
+
+  const markTodoAsCompleted = (todoId) => {
+    const updatedTodoList = todoList.map((todo) => {
+      if (todo.id === todoId) {
+        return { ...todo, completed: true };
+      }
+      return todo;
+    });
+
+    setTodoList(updatedTodoList);
+  };
+
+  const unMarkTodoAsCompleted = (todoId) => {
+    const updatedTodoList = todoList.map((todo) => {
+      if (todo.id === todoId) {
+        return { ...todo, completed: false };
+      }
+      return todo;
+    });
+    setTodoList(updatedTodoList);
+  };
+
   return (
     <SettingsContext.Provider
-      value={{ sidebar, setSidebar, todoList, setTodoList }}
+      value={{
+        sidebar,
+        setSidebar,
+        todoList,
+        setTodoList,
+        markTodoAsImportant,
+        unmarkTodoAsImportant,
+        markTodoAsCompleted,
+        unMarkTodoAsCompleted,
+      }}
     >
       {children}
     </SettingsContext.Provider>

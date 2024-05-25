@@ -149,7 +149,7 @@ const MainContainer = styled.div`
 `;
 
 const SidebarContainer = styled.div`
-  background-color: rgba(41, 41, 41, 0.97);
+  background-color: rgba(41, 41, 41, 0.95);
   height: 100vh;
   overflow-y: auto;
 
@@ -207,12 +207,10 @@ const CustomInput = styled.input`
 `;
 
 const Main = styled.main`
-  background-color: #fff;
   flex-grow: 1;
   border-top-left-radius: ${(props) => (props.isOpen ? "10px" : "0px")};
   border-bottom-left-radius: ${(props) => (props.isOpen ? "10px" : "0px")};
-
-  overflow: hidden;
+  height: 100vh;
 `;
 
 const CustomNavLink = styled(NavLink)`
