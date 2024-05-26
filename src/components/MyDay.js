@@ -3,14 +3,38 @@ import { TfiLightBulb } from "react-icons/tfi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosMore } from "react-icons/io";
 import { IoSunnyOutline } from "react-icons/io5";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SettingsContext } from "./SettingsContext";
 import NewTodoInput from "./NewTodoInput";
 import TodoItem from "./TodoItem";
 
+const pageConstants = {
+  myDay: "MY_DAY",
+  important: "IMPORTANT",
+  planned: "PLANNED",
+  all: "ALL",
+  completed: "COMPLETED",
+  assignedToMe: "ASSIGNED_TO_ME",
+  tasks: "TASKS",
+};
+
 const MyDay = () => {
+  const [configObj, setConfigObj] = useState({});
+
   const { setSidebar, todoList, setListOptionsSidebar, setSuggestionsSidebar } =
     useContext(SettingsContext);
+
+  useEffect(() => {
+    const pageConfigList = localStorage.getItem("pageConfigList");
+
+    if (pageConfigList !== null) {
+      const myDayConfigObj = JSON.parse(pageConfigList).filter(
+        (eachObj) => eachObj.pageId === pageConstants.myDay
+      )[0];
+
+      setConfigObj(myDayConfigObj);
+    }
+  }, []);
 
   const getFormattedDate = (date) => {
     const options = { weekday: "long", day: "2-digit", month: "short" };
@@ -24,8 +48,10 @@ const MyDay = () => {
   const currentDate = new Date();
   const formattedDate = getFormattedDate(currentDate);
 
+  const { pageId, bgImage, sorted } = configObj;
+
   return (
-    <MainContainer>
+    <MainContainer bgImage={bgImage}>
       <Button onClick={() => setSidebar(true)}>
         <GiHamburgerMenu />
       </Button>
@@ -75,7 +101,7 @@ const MainContainer = styled.div`
   @media screen and (min-width: 768px) {
     padding: 20px;
   }
-  background-image: url("https://res.cloudinary.com/dctfbwk0m/image/upload/v1716527979/dry-autumn-leaves-nature-min_dslzyb.jpg");
+  background-image: ${(props) => `url(${props.bgImage})`};
   background-size: cover;
   display: flex;
   flex-direction: column;

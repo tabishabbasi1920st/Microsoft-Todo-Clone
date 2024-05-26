@@ -2,6 +2,7 @@ import styled from "styled-components";
 import SidebarPanel from "./SidebarPanel";
 import ListOptionsSidebar from "./ListOptionsSidebar";
 import SuggestionSidebar from "./SuggestionSidebar";
+import TodoInfoSidebar from "./TodoInfoSidebar";
 
 export default function Sidebar({ children }) {
   return (
@@ -10,6 +11,7 @@ export default function Sidebar({ children }) {
       <Main>{children}</Main>
       <ListOptionsSidebar />
       <SuggestionSidebar />
+      <TodoInfoSidebar />
     </MainContainer>
   );
 }

@@ -115,6 +115,7 @@ const ListOptionsSidebar = () => {
       >
         {colorsAndImages.map((eachObj) => (
           <li
+            key={eachObj.id}
             style={{
               backgroundImage: `url(${eachObj.icon})`,
               height: "75px",

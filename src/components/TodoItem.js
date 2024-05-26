@@ -7,8 +7,6 @@ import { useContext } from "react";
 // stars.
 import { IoIosStarOutline } from "react-icons/io";
 import { IoIosStar } from "react-icons/io";
-import { useState } from "react";
-
 import { GoCheckCircle } from "react-icons/go";
 
 const TodoItem = ({ todo }) => {
@@ -19,6 +17,8 @@ const TodoItem = ({ todo }) => {
     unmarkTodoAsImportant,
     markTodoAsCompleted,
     unMarkTodoAsCompleted,
+    todoInfoSidebar,
+    setTodoInfoSidebar,
   } = useContext(SettingsContext);
 
   return (
@@ -37,7 +37,7 @@ const TodoItem = ({ todo }) => {
         </Button>
       </div>
 
-      <TodoText>{text}</TodoText>
+      <TodoText onClick={() => setTodoInfoSidebar(true)}>{text}</TodoText>
 
       <div style={{ display: "flex", height: "100%" }}>
         <StarButton
@@ -111,4 +111,8 @@ const TodoText = styled.p`
   color: #fff;
   font-weight: 400;
   flex-grow: 1;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
 `;
